@@ -43,8 +43,9 @@ public class DiscountServiceImpl implements DiscountService {
 	        discountResponse.setExtraDiscount(billsDiscount);
 	        discountResponse.setFinalBill(finalAmount);
 		}catch(Exception e) {
-			throw new ApplicationRuntimeException();
+			throw new ApplicationRuntimeException(e.getLocalizedMessage());
 		}
+		
 		log.info("Finished processing in DiscountServiceImpl:discountCalculation");
 		return discountResponse;
 	}

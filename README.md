@@ -62,7 +62,7 @@ The code coverage report:
 
 ### API Endpoint
 
-* Http Method - **POST**
+* Http Method - **GET**
 * Endpoint - **localhost:8080/api/v1/discounts**
 
 Example request
