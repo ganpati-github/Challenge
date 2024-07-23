@@ -27,7 +27,6 @@ public class DiscountServiceImpl implements DiscountService {
 		
 		DiscountResponse discountResponse = new DiscountResponse();
 		try {
-	
 	        BigDecimal totalAmount = discountUtility.calculateTotal(bill.getItems());
 	        BigDecimal groceryAmount = discountUtility.calculateTotalPerType(bill.getItems(), ItemType.GROCERY);
 	        BigDecimal nonGroceryAmount = totalAmount.subtract(groceryAmount);
