@@ -1,5 +1,6 @@
 package com.challenge.exception;
 
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +50,19 @@ public class ApplicationExceptionHandler {
 		
 		log.info("Finished processing in ApplicationExceptionHandler:handleApplicationRuntimeException");
 		return new ResponseEntity<DiscountResponse>(discountResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	@ExceptionHandler(DateTimeParseException.class)
+	public ResponseEntity<DiscountResponse> handleDateTimeParseException(DateTimeParseException ex){
+		log.info("Started processing in ApplicationExceptionHandler:handleDateTimeParseException");
+		ApiError apiError = 
+			      new ApiError(HttpStatus.BAD_REQUEST, VALIDATION_ERROR_MESSAGES, "RegisterDate format should be yyyy-mm-dd");
+		
+		DiscountResponse discountResponse = new DiscountResponse();
+		discountResponse.setApiError(apiError);
+		
+		log.info("Finished processing in ApplicationExceptionHandler:handleDateTimeParseException");
+		return new ResponseEntity<DiscountResponse>(discountResponse, HttpStatus.BAD_REQUEST);
 	}
 
 }

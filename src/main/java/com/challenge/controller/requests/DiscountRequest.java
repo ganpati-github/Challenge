@@ -4,7 +4,7 @@ package com.challenge.controller.requests;
 import com.challenge.models.Bill;
 import com.challenge.models.User;
 
-import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,10 +12,10 @@ import lombok.Setter;
 @Setter
 public class DiscountRequest {
 
-	@Valid
+	@NotNull
     private User user;
 
-	@Valid
+	@NotNull
     private Bill bill;
 
 }
