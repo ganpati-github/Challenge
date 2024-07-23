@@ -46,24 +46,12 @@ To execute the unit tests against the business logic service classes please run 
 mvn test
 ```
 
-## Code coverage
-
-The code coverage report:
-
-
-| Package | Coverage |
-|---|---|
-| all classes | 93.00% |
-| src/main/java | 87.50% |
-| src/main/java | 96.40% | 
-
-
 ## Using
 
 ### API Endpoint
 
 * Http Method - **GET**
-* Endpoint - **localhost:8080/api/v1/discounts**
+* Endpoint - **http://localhost:8080/challenge/v1/discounts**
 
 Example request
 
